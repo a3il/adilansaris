@@ -1,8 +1,574 @@
-mkdir adilansaris && cd adilansaris
-# copy index.html into this folder
-git init
-git add index.html
-git commit -m "Initial site"
-git branch -M main
-git remote add origin https://github.com/YOUR-HANDLE/adilansaris.git
-git push -u origin main
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ============================================================
+     EDIT THESE THREE LINES WHEN ANYTHING CHANGES
+     ============================================================ -->
+<title>Adil Ansari — IT Infrastructure &amp; Network Engineer</title>
+<meta name="description" content="IT Infrastructure &amp; Network Engineer in Dubai. Enterprise networking, virtualisation, and infrastructure ownership across the UAE and Bahrain.">
+<link rel="canonical" href="https://adilansaris.com/">
+
+<meta property="og:title" content="Adil Ansari — IT Infrastructure &amp; Network Engineer">
+<meta property="og:description" content="Enterprise networking, virtualisation, and infrastructure ownership across the UAE and Bahrain.">
+<meta property="og:url" content="https://adilansaris.com/">
+<meta property="og:type" content="profile">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ------------------------------------------------------------------
+   TOKENS — the palette is the four twisted pairs of a T568B cable
+   ------------------------------------------------------------------ */
+:root{
+  --paper:#F2F3F1;
+  --card:#FFFFFF;
+  --ink:#15181B;
+  --slate:#59626A;
+  --faint:#8B939A;
+  --rule:#D6DADD;
+
+  --pair-blue:#1E5FA8;
+  --pair-orange:#E07B2C;
+  --pair-green:#2E8B57;
+  --pair-brown:#7A5340;
+
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+
+  --gap:clamp(1.5rem,4vw,3rem);
+  --maxw:1120px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+
+/* ------------------------------------------------------------------
+   SIGNATURE — the four-pair stripe. Used as every section marker.
+   ------------------------------------------------------------------ */
+.pairs{display:flex;height:3px;width:64px;border-radius:2px;overflow:hidden}
+.pairs i{flex:1}
+.pairs i:nth-child(1){background:var(--pair-blue)}
+.pairs i:nth-child(2){background:var(--pair-orange)}
+.pairs i:nth-child(3){background:var(--pair-green)}
+.pairs i:nth-child(4){background:var(--pair-brown)}
+.pairs--wide{width:100%;height:4px;border-radius:0}
+
+/* ------------------------------------------------------------------
+   SHELL
+   ------------------------------------------------------------------ */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gap)}
+
+.layout{
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:clamp(2rem,5vw,4.5rem);
+  align-items:start;
+  padding-bottom:5rem;
+}
+
+/* ---------- LEFT RAIL ---------- */
+.rail{position:sticky;top:3rem}
+.rail-name{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:1.6rem;
+  letter-spacing:-.015em;
+  line-height:1.1;
+}
+.rail-role{
+  font-family:var(--mono);
+  font-size:.74rem;
+  color:var(--slate);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  margin-top:.6rem;
+  line-height:1.5;
+}
+.rail .pairs{margin:1.25rem 0}
+
+.nav{list-style:none;margin-top:.5rem}
+.nav li{margin:.15rem 0}
+.nav a{
+  font-family:var(--mono);
+  font-size:.8rem;
+  text-decoration:none;
+  color:var(--slate);
+  display:flex;
+  gap:.6rem;
+  padding:.2rem 0;
+  transition:color .15s;
+}
+.nav a span{color:var(--faint);font-size:.7rem;padding-top:.15rem}
+.nav a:hover,.nav a:focus-visible{color:var(--pair-blue)}
+
+.contact{margin-top:2rem;font-family:var(--mono);font-size:.78rem;line-height:2}
+.contact a{color:var(--slate);text-decoration:none;border-bottom:1px solid var(--rule)}
+.contact a:hover{color:var(--pair-blue);border-color:var(--pair-blue)}
+
+/* ---------- HERO ---------- */
+.hero{padding:clamp(3rem,8vw,5.5rem) 0 2.5rem}
+.eyebrow{
+  font-family:var(--mono);
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--faint);
+}
+.hero h1{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(2.6rem,6.5vw,4.4rem);
+  line-height:1.02;
+  letter-spacing:-.025em;
+  margin:.9rem 0 1.4rem;
+  max-width:15ch;
+}
+.hero p{max-width:56ch;color:var(--slate);font-size:1.02rem}
+
+/* the scale block — a real inventory, not a stat card */
+.scale{
+  margin-top:2.5rem;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  font-family:var(--mono);
+}
+.scale div{padding:1.1rem 0;border-right:1px solid var(--rule)}
+.scale div:last-child{border-right:0}
+.scale b{
+  display:block;
+  font-family:var(--display);
+  font-size:1.9rem;
+  font-weight:700;
+  line-height:1;
+  letter-spacing:-.02em;
+}
+.scale small{
+  display:block;
+  margin-top:.45rem;
+  font-size:.68rem;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  color:var(--faint);
+}
+
+/* ---------- SECTIONS ---------- */
+section{padding-top:3.5rem}
+.sec-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.75rem}
+.sec-head h2{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:1.15rem;
+  letter-spacing:.01em;
+}
+.sec-head .rule{flex:1;height:1px;background:var(--rule)}
+
+/* ---------- EXPERIENCE ---------- */
+.job{
+  display:grid;
+  grid-template-columns:150px 1fr;
+  gap:1.5rem;
+  padding:1.6rem 0;
+  border-top:1px solid var(--rule);
+}
+.job:first-of-type{border-top:0;padding-top:0}
+.job-when{
+  font-family:var(--mono);
+  font-size:.76rem;
+  color:var(--faint);
+  padding-top:.2rem;
+  line-height:1.7;
+}
+.job-when .now{
+  color:var(--pair-green);
+  font-weight:500;
+}
+.job h3{font-size:1.05rem;font-weight:600;letter-spacing:-.005em}
+.job .org{
+  font-family:var(--mono);
+  font-size:.8rem;
+  color:var(--pair-blue);
+  margin:.2rem 0 .7rem;
+}
+.job ul{list-style:none;color:var(--slate);font-size:.94rem}
+.job li{padding-left:1.1rem;position:relative;margin:.3rem 0}
+.job li::before{
+  content:"";
+  position:absolute;
+  left:0;top:.72em;
+  width:5px;height:1px;
+  background:var(--faint);
+}
+
+/* ---------- SKILLS ---------- */
+.skillset{display:grid;grid-template-columns:150px 1fr;gap:1.5rem;padding:1.1rem 0;border-top:1px solid var(--rule)}
+.skillset:first-of-type{border-top:0}
+.skillset h4{
+  font-family:var(--mono);
+  font-size:.74rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--faint);
+  font-weight:500;
+  padding-top:.35rem;
+}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.tag{
+  font-family:var(--mono);
+  font-size:.76rem;
+  background:var(--card);
+  border:1px solid var(--rule);
+  border-radius:3px;
+  padding:.22rem .55rem;
+  color:var(--slate);
+}
+
+/* ---------- PROJECTS ---------- */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.proj{background:var(--card);padding:1.4rem}
+.proj .pairs{width:36px;margin-bottom:.9rem}
+.proj h3{font-size:.98rem;font-weight:600;margin-bottom:.4rem}
+.proj p{font-size:.88rem;color:var(--slate)}
+.proj .stack{
+  font-family:var(--mono);
+  font-size:.72rem;
+  color:var(--faint);
+  margin-top:.8rem;
+  line-height:1.7;
+}
+
+/* ---------- EDUCATION ---------- */
+.edu{display:grid;grid-template-columns:150px 1fr;gap:1.5rem;padding:1.1rem 0;border-top:1px solid var(--rule)}
+.edu:first-of-type{border-top:0}
+.edu .label{font-family:var(--mono);font-size:.76rem;color:var(--faint);padding-top:.15rem}
+.edu strong{font-weight:600}
+.edu span{display:block;color:var(--slate);font-size:.9rem}
+
+/* ---------- FOOTER ---------- */
+footer{margin-top:4rem;padding:2rem 0 3rem;border-top:1px solid var(--rule)}
+footer p{font-family:var(--mono);font-size:.74rem;color:var(--faint)}
+footer a{color:var(--slate)}
+
+/* ---------- MOBILE ---------- */
+@media (max-width:820px){
+  .layout{grid-template-columns:1fr;gap:0}
+  .rail{position:static;padding-top:2.5rem}
+  .nav{display:none}
+  .hero{padding-top:2rem}
+  .job,.skillset,.edu{grid-template-columns:1fr;gap:.5rem}
+  .scale{grid-template-columns:repeat(2,1fr)}
+  .scale div:nth-child(2){border-right:0}
+  .scale div:nth-child(1),.scale div:nth-child(2){border-bottom:1px solid var(--rule)}
+}
+
+/* ---------- LOAD-IN ---------- */
+.rise{opacity:0;transform:translateY(10px);animation:rise .55s cubic-bezier(.2,.7,.3,1) forwards}
+.rise:nth-child(2){animation-delay:.06s}
+.rise:nth-child(3){animation-delay:.12s}
+@keyframes rise{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .rise{animation:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- PRINT: gives you a clean PDF resume from Ctrl+P ---------- */
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  .layout{grid-template-columns:1fr;gap:0;padding-bottom:0}
+  .rail{position:static}
+  .nav,.pairs--wide{display:none}
+  section{padding-top:1.4rem;break-inside:avoid}
+  .job,.proj{break-inside:avoid}
+  .hero{padding:1rem 0}
+  .hero h1{font-size:26pt}
+  a{text-decoration:none}
+}
+</style>
+</head>
+
+<body>
+
+<div class="pairs pairs--wide"></div>
+
+<div class="wrap">
+<div class="layout">
+
+  <!-- ================= LEFT RAIL ================= -->
+  <aside class="rail">
+    <div class="rail-name">Adil Ansari</div>
+    <div class="rail-role">IT Infrastructure<br>&amp; Network Engineer</div>
+    <div class="pairs"><i></i><i></i><i></i><i></i></div>
+
+    <nav>
+      <ul class="nav">
+        <li><a href="#experience"><span>01</span> Experience</a></li>
+        <li><a href="#skills"><span>02</span> Skills</a></li>
+        <li><a href="#projects"><span>03</span> Projects &amp; Lab</a></li>
+        <li><a href="#education"><span>04</span> Education</a></li>
+      </ul>
+    </nav>
+
+    <div class="contact">
+      Dubai, UAE<br>
+      <a href="mailto:adil@adilansaris.com">adil@adilansaris.com</a><br>
+      <!-- EDIT: put your real LinkedIn and GitHub handles here -->
+      <a href="https://linkedin.com/in/YOUR-HANDLE">linkedin</a> ·
+      <a href="https://github.com/YOUR-HANDLE">github</a>
+    </div>
+  </aside>
+
+  <!-- ================= MAIN ================= -->
+  <main>
+
+    <header class="hero">
+      <div class="eyebrow rise">Dubai, United Arab Emirates</div>
+      <h1 class="rise">Infrastructure that has to stay up.</h1>
+      <p class="rise">
+        I run the network, servers, and systems for a commercial group operating
+        across the UAE and Bahrain — as the sole IT engineer. Before that:
+        telecom networking, RF and machine-learning research, and enterprise
+        security systems. I build in a full production-grade lab before I touch
+        production.
+      </p>
+
+      <div class="scale">
+        <div><b>400</b><small>Users supported</small></div>
+        <div><b>5</b><small>Branches</small></div>
+        <div><b>4</b><small>Warehouses</small></div>
+        <div><b>2</b><small>Countries</small></div>
+      </div>
+    </header>
+
+    <!-- ================= EXPERIENCE ================= -->
+    <section id="experience">
+      <div class="sec-head">
+        <h2>Experience</h2><div class="rule"></div>
+      </div>
+
+      <article class="job">
+        <div class="job-when">Sep 2025 —<br><span class="now">Present</span></div>
+        <div>
+          <h3>IT Infrastructure &amp; Network Engineer</h3>
+          <div class="org">Haji Commercial Company LLC — Dubai</div>
+          <ul>
+            <li>Sole IT engineer for ~400 users across five branches, four warehouses in the UAE, and operations in Bahrain.</li>
+            <li>Own networking, Windows infrastructure, virtualisation, storage, backup, and site-to-site connectivity end to end.</li>
+            <li>Run SAP Business One on HANA and built the Power BI reporting layer on top of it for sales, inventory, finance, and ageing analysis.</li>
+            <li>Manage VoIP/PBX, CCTV and ELV systems, and firewall policy on Sophos.</li>
+            <li>Leading Active Directory rollout, shared storage consolidation, and SIP telephony migration.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="job-when">May 2024 —<br>Jun 2025</div>
+        <div>
+          <h3>Network &amp; Systems Engineer</h3>
+          <div class="org">FirePro Star Safety and Security</div>
+          <ul>
+            <li>Designed, deployed, and supported enterprise LAN/WAN and security systems for commercial sites.</li>
+            <li>Routing and switching, wireless, firewall configuration, and server administration.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="job-when">2023</div>
+        <div>
+          <h3>Research Engineer — Wireless Communications &amp; Machine Learning</h3>
+          <div class="org">Indian Institute of Technology (IIT) Patna</div>
+          <ul>
+            <li>RF signal capture and analysis for drone detection and classification, including VSWR characterisation.</li>
+            <li>Built the ML pipeline that classified drone types from captured RF signatures.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="job-when">Jun 2022 —<br>Sep 2022</div>
+        <div>
+          <h3>Network Engineer — Telecom Networks</h3>
+          <div class="org">BSNL / BSNL RTTC</div>
+          <ul>
+            <li>Carrier-side network operations and training on telecom transmission and access networks.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="job-when">Apr 2021 —<br>May 2022</div>
+        <div>
+          <h3>IT Systems &amp; Network Support Engineer</h3>
+          <div class="org">Amy Fashions Online</div>
+          <ul>
+            <li>End-user support, network and systems administration, and IT operations for a retail business.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section id="skills">
+      <div class="sec-head">
+        <h2>Skills</h2><div class="rule"></div>
+      </div>
+
+      <div class="skillset">
+        <h4>Networking</h4>
+        <div class="tags">
+          <span class="tag">TCP/IP</span><span class="tag">Routing &amp; Switching</span>
+          <span class="tag">OSPF</span><span class="tag">BGP</span><span class="tag">EIGRP</span>
+          <span class="tag">MPLS</span><span class="tag">SD-WAN</span><span class="tag">QoS</span>
+          <span class="tag">NAC</span><span class="tag">LAN/WAN</span>
+        </div>
+      </div>
+
+      <div class="skillset">
+        <h4>Hardware</h4>
+        <div class="tags">
+          <span class="tag">Cisco</span><span class="tag">Aruba</span><span class="tag">Fortinet</span>
+          <span class="tag">Sophos</span><span class="tag">HP</span><span class="tag">Ubiquiti</span>
+          <span class="tag">Dell PowerEdge</span><span class="tag">Wireless controllers</span>
+        </div>
+      </div>
+
+      <div class="skillset">
+        <h4>Systems</h4>
+        <div class="tags">
+          <span class="tag">Windows Server</span><span class="tag">Active Directory</span>
+          <span class="tag">Linux</span><span class="tag">VMware</span><span class="tag">Hyper-V</span>
+          <span class="tag">Proxmox</span><span class="tag">TrueNAS</span><span class="tag">NAS/SAN</span>
+        </div>
+      </div>
+
+      <div class="skillset">
+        <h4>Cloud &amp; Automation</h4>
+        <div class="tags">
+          <span class="tag">AWS VPC</span><span class="tag">Docker</span><span class="tag">Kubernetes</span>
+          <span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">Python</span>
+          <span class="tag">PowerShell</span><span class="tag">Bash</span>
+        </div>
+      </div>
+
+      <div class="skillset">
+        <h4>Monitoring &amp; Apps</h4>
+        <div class="tags">
+          <span class="tag">Zabbix</span><span class="tag">Grafana</span><span class="tag">SolarWinds</span>
+          <span class="tag">Dynatrace</span><span class="tag">SNMP</span><span class="tag">SAP HANA</span>
+          <span class="tag">SAP Business One</span><span class="tag">Power BI</span>
+          <span class="tag">ServiceNow</span><span class="tag">ManageEngine</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects">
+      <div class="sec-head">
+        <h2>Projects &amp; Lab</h2><div class="rule"></div>
+      </div>
+
+      <div class="projects">
+        <article class="proj">
+          <div class="pairs"><i></i><i></i><i></i><i></i></div>
+          <h3>Production-grade home lab</h3>
+          <p>A full enterprise stack built to mirror real production, used to test everything before it reaches a live network.</p>
+          <div class="stack">Dell R730 · Proxmox · FortiGate 140E<br>Cisco Catalyst · EVE-NG · TrueNAS · Aruba</div>
+        </article>
+
+        <article class="proj">
+          <div class="pairs"><i></i><i></i><i></i><i></i></div>
+          <h3>SAP Business One → Power BI</h3>
+          <p>Automated management reporting on a read-only HANA connection, with figures reconciled against SAP's own standard reports.</p>
+          <div class="stack">SAP HANA · Power BI · Calculation views</div>
+        </article>
+
+        <article class="proj">
+          <div class="pairs"><i></i><i></i><i></i><i></i></div>
+          <h3>Drone detection via RF signals</h3>
+          <p>Detection and classification of drones from captured radio-frequency signatures. Research work at IIT Patna.</p>
+          <div class="stack">RF capture · VSWR · Python · Machine learning</div>
+        </article>
+
+        <article class="proj">
+          <div class="pairs"><i></i><i></i><i></i><i></i></div>
+          <h3>Mission 100K ft</h3>
+          <p>High-altitude wireless live-video and telemetry link for a weather-balloon payload.</p>
+          <div class="stack">RF link budget · Telemetry · Live video</div>
+        </article>
+
+        <article class="proj">
+          <div class="pairs"><i></i><i></i><i></i><i></i></div>
+          <h3>Pneumonia detection with U-Net</h3>
+          <p>Medical-imaging segmentation model for identifying pneumonia in chest radiographs.</p>
+          <div class="stack">U-Net · Python · Deep learning</div>
+        </article>
+
+        <article class="proj">
+          <div class="pairs"><i></i><i></i><i></i><i></i></div>
+          <h3>CCNP lab curriculum</h3>
+          <p>A structured enterprise-networking syllabus built and worked through in EVE-NG on Proxmox.</p>
+          <div class="stack">EVE-NG · Cisco IOS · Routing &amp; switching</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= EDUCATION ================= -->
+    <section id="education">
+      <div class="sec-head">
+        <h2>Education &amp; Certification</h2><div class="rule"></div>
+      </div>
+
+      <div class="edu">
+        <div class="label">Degree</div>
+        <div>
+          <strong>BTech, Electronics and Communication Engineering</strong>
+          <span>Bachelor of Technology</span>
+        </div>
+      </div>
+
+      <div class="edu">
+        <div class="label">Diploma</div>
+        <div>
+          <strong>Diploma, Electronics and Communication Engineering</strong>
+        </div>
+      </div>
+
+      <div class="edu">
+        <div class="label">Certification</div>
+        <div>
+          <strong>CDCP — Certified Data Centre Professional</strong>
+          <span>Currently working toward CCNP Enterprise</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        Adil Ansari · Dubai, UAE ·
+        <a href="mailto:adil@adilansaris.com">adil@adilansaris.com</a><br>
+        Last updated July 2026
+      </p>
+    </footer>
+
+  </main>
+</div>
+</div>
+
+</body>
+</html>
