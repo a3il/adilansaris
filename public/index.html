@@ -7,25 +7,29 @@
 <!-- ==========================================================
      ADIL ANSARI — adilansaris.com
      Single file. No build step. Edit and push.
+     Requires: photo.jpg in the same folder.
      ========================================================== -->
 
-<title>Adil Ansari — Senior IT Infrastructure &amp; Network Engineer</title>
-<meta name="description" content="Senior IT Infrastructure &amp; Network Engineer in Dubai. Data centre operations, enterprise and carrier networking, hybrid cloud, and infrastructure automation across the UAE, Qatar and Bahrain.">
+<title>Adil Ansari — IT Infrastructure &amp; Network Engineer</title>
+<meta name="description" content="IT Infrastructure &amp; Network Engineer in Dubai. Data centre operations, enterprise and carrier networking, Cisco, Huawei, Aruba, Meraki, Fortinet, hybrid cloud and infrastructure automation across the UAE, Qatar and Bahrain.">
 <link rel="canonical" href="https://adilansaris.com/">
 
-<meta property="og:title" content="Adil Ansari — Senior IT Infrastructure &amp; Network Engineer">
-<meta property="og:description" content="Data centre operations, enterprise and carrier networking, hybrid cloud, and infrastructure automation across the UAE, Qatar and Bahrain.">
+<meta property="og:title" content="Adil Ansari — IT Infrastructure &amp; Network Engineer">
+<meta property="og:description" content="Data centre operations, enterprise and carrier networking, hybrid cloud and infrastructure automation across the UAE, Qatar and Bahrain.">
 <meta property="og:url" content="https://adilansaris.com/">
+<meta property="og:image" content="https://adilansaris.com/photo.jpg">
 <meta property="og:type" content="profile">
+<meta name="twitter:card" content="summary">
 
+<link rel="icon" href="/photo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.github.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 /* ==========================================================
-   TOKENS — palette taken from the four twisted pairs
-   of a T568B cable. Blue / orange / green / brown.
+   TOKENS — palette from the four twisted pairs of a T568B cable
    ========================================================== */
 :root{
   --paper:#F4F5F3;
@@ -53,19 +57,16 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:2rem}
 body{
-  background:var(--paper);
-  color:var(--ink);
-  font-family:var(--body);
-  font-size:16px;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
+  background:var(--paper);color:var(--ink);font-family:var(--body);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
 a{color:inherit}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px}
+svg.ic{width:15px;height:15px;flex:none;stroke:currentColor;stroke-width:1.6;
+  fill:none;stroke-linecap:round;stroke-linejoin:round}
 
 /* ==========================================================
-   SIGNATURE — the four-pair stripe
+   SIGNATURE STRIPE
    ========================================================== */
 .pairs{display:flex;height:3px;width:64px;border-radius:2px;overflow:hidden}
 .pairs i{flex:1;transform:scaleX(0);transform-origin:left;animation:stripe .5s var(--ease) forwards}
@@ -86,89 +87,89 @@ a{color:inherit}
    SHELL
    ========================================================== */
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gap)}
-.layout{
-  display:grid;
-  grid-template-columns:250px 1fr;
-  gap:clamp(2rem,5vw,4.5rem);
-  align-items:start;
-  padding:1rem 0 5rem;
-}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:clamp(2rem,5vw,4.5rem);
+  align-items:start;padding:1rem 0 5rem}
 
 /* ---------- LEFT RAIL ---------- */
 .rail{position:sticky;top:2.5rem}
-.rail-name{
-  font-family:var(--display);font-weight:700;font-size:1.55rem;
-  letter-spacing:-.015em;line-height:1.1;
+.photo{
+  width:112px;height:112px;border-radius:6px;object-fit:cover;display:block;
+  border:1px solid var(--rule);margin-bottom:1.1rem;background:var(--card);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease);
 }
-.rail-role{
-  font-family:var(--mono);font-size:.72rem;color:var(--slate);
-  text-transform:uppercase;letter-spacing:.07em;margin-top:.55rem;line-height:1.55;
-}
-.rail .pairs{margin:1.2rem 0 1.4rem}
+.photo:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(20,23,26,.13)}
+.rail-name{font-family:var(--display);font-weight:700;font-size:1.55rem;
+  letter-spacing:-.015em;line-height:1.1}
+.rail-role{font-family:var(--mono);font-size:.72rem;color:var(--slate);
+  text-transform:uppercase;letter-spacing:.07em;margin-top:.5rem;line-height:1.55}
+.rail .pairs{margin:1.1rem 0 1.3rem}
 
 .nav{list-style:none}
-.nav a{
-  font-family:var(--mono);font-size:.78rem;text-decoration:none;color:var(--faint);
-  display:flex;gap:.65rem;padding:.28rem 0;
-  transition:color .2s var(--ease),transform .2s var(--ease);
-}
+.nav a{font-family:var(--mono);font-size:.78rem;text-decoration:none;color:var(--faint);
+  display:flex;gap:.65rem;padding:.26rem 0;
+  transition:color .2s var(--ease),transform .2s var(--ease)}
 .nav a em{font-style:normal;font-size:.68rem;padding-top:.15rem;opacity:.7}
 .nav a:hover{color:var(--blue);transform:translateX(3px)}
 .nav a.active{color:var(--ink);font-weight:500}
 .nav a.active em{color:var(--blue);opacity:1}
 
-.contact{margin-top:1.9rem;font-family:var(--mono);font-size:.75rem;line-height:1.95;color:var(--slate)}
-.contact a{text-decoration:none;border-bottom:1px solid var(--rule);transition:color .2s,border-color .2s}
-.contact a:hover{color:var(--blue);border-color:var(--blue)}
-.contact .lbl{color:var(--faint);display:block;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:.9rem}
+.contact{margin-top:1.8rem;font-family:var(--mono);font-size:.75rem;color:var(--slate)}
+.contact .lbl{color:var(--faint);display:block;font-size:.64rem;letter-spacing:.09em;
+  text-transform:uppercase;margin:0 0 .5rem}
+.crow{display:flex;align-items:center;gap:.55rem;padding:.18rem 0;text-decoration:none;
+  color:var(--slate);transition:color .2s var(--ease),transform .2s var(--ease)}
+.crow:hover{color:var(--blue);transform:translateX(2px)}
+.crow span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.socials{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.7rem}
+.soc{
+  width:32px;height:32px;border:1px solid var(--rule);border-radius:5px;background:var(--card);
+  display:flex;align-items:center;justify-content:center;color:var(--slate);
+  transition:color .2s,border-color .2s,transform .25s var(--ease),box-shadow .25s var(--ease);
+}
+.soc svg{width:16px;height:16px}
+.soc:hover{transform:translateY(-3px);box-shadow:0 5px 14px rgba(20,23,26,.10)}
+.soc.li:hover{color:#0A66C2;border-color:#0A66C2}
+.soc.gh:hover{color:#14171A;border-color:#14171A}
+.soc.yt:hover{color:#FF0000;border-color:#FF0000}
+.soc.ig:hover{color:#C13584;border-color:#C13584}
+.soc.wa:hover{color:#25D366;border-color:#25D366}
+.soc.em:hover{color:var(--blue);border-color:var(--blue)}
 
 /* ==========================================================
    HERO
    ========================================================== */
 .hero{padding:clamp(2rem,7vw,4.5rem) 0 1rem}
-.eyebrow{
-  font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--faint);
-}
-.hero h1{
-  font-family:var(--display);font-weight:700;
+.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--faint)}
+.hero h1{font-family:var(--display);font-weight:700;
   font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.02;letter-spacing:-.025em;
-  margin:.85rem 0 1.3rem;max-width:16ch;
-}
+  margin:.85rem 0 1.3rem;max-width:16ch}
 .hero .lede{max-width:62ch;color:var(--slate);font-size:1.02rem}
 .hero .lede strong{color:var(--ink);font-weight:600}
 
-/* stat band */
-.scale{
-  margin-top:2.4rem;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
-  display:grid;grid-template-columns:repeat(4,1fr);font-family:var(--mono);
-}
+.scale{margin-top:2.4rem;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  display:grid;grid-template-columns:repeat(4,1fr);font-family:var(--mono)}
 .scale div{padding:1.15rem 0;border-right:1px solid var(--rule-soft)}
 .scale div:last-child{border-right:0}
-.scale b{
-  display:block;font-family:var(--display);font-size:2rem;font-weight:700;
-  line-height:1;letter-spacing:-.02em;
-}
-.scale b span{color:var(--orange)}
-.scale small{
-  display:block;margin-top:.45rem;font-size:.66rem;text-transform:uppercase;
-  letter-spacing:.09em;color:var(--faint);
-}
+.scale b{display:block;font-family:var(--display);font-size:2rem;font-weight:700;
+  line-height:1;letter-spacing:-.02em}
+.scale b i{font-style:normal;color:var(--orange)}
+.scale small{display:block;margin-top:.45rem;font-size:.66rem;text-transform:uppercase;
+  letter-spacing:.09em;color:var(--faint)}
 
 /* ---------- TOPOLOGY ---------- */
 .topo{margin-top:2.2rem}
 .topo svg{width:100%;height:auto;max-width:760px;display:block}
-.topo .edge{
-  fill:none;stroke:var(--rule);stroke-width:1.2;
-  stroke-dasharray:1;stroke-dashoffset:1;
-  animation:draw 1.4s var(--ease) forwards;
-}
+.topo .edge{fill:none;stroke:var(--rule);stroke-width:1.2;
+  stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.4s var(--ease) forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
 .topo .node{opacity:0;animation:pop .5s var(--ease) forwards}
 @keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
 .topo text{font-family:var(--mono);font-size:9.5px;fill:var(--slate);letter-spacing:.04em}
 .topo .cap{font-size:8px;fill:var(--faint);text-transform:uppercase;letter-spacing:.12em}
-.topo .core-ring{transform-origin:center;transform-box:fill-box;animation:breathe 3.2s ease-in-out 1.6s infinite}
+.topo .core-ring{transform-origin:center;transform-box:fill-box;
+  animation:breathe 3.2s ease-in-out 1.6s infinite}
 @keyframes breathe{0%,100%{opacity:.25;transform:scale(1)}50%{opacity:.6;transform:scale(1.28)}}
 
 /* ==========================================================
@@ -180,27 +181,21 @@ section{padding-top:3.6rem}
 .sec-head .num{font-family:var(--mono);font-size:.7rem;color:var(--orange)}
 .sec-head .rule{flex:1;height:1px;background:var(--rule)}
 
-/* ---------- FOCUS CHIPS ---------- */
 .focus{display:flex;flex-wrap:wrap;gap:.4rem}
-.focus span{
-  font-family:var(--mono);font-size:.74rem;color:var(--slate);
+.focus span{font-family:var(--mono);font-size:.74rem;color:var(--slate);
   border:1px solid var(--rule);border-radius:100px;padding:.28rem .7rem;background:var(--card);
-  transition:border-color .2s,color .2s,transform .2s var(--ease);
-}
+  transition:border-color .2s,color .2s,transform .2s var(--ease)}
 .focus span:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
 
 /* ---------- EXPERIENCE ---------- */
-.job{
-  display:grid;grid-template-columns:145px 1fr;gap:1.5rem;
-  padding:1.7rem 0;border-top:1px solid var(--rule-soft);
-}
+.job{display:grid;grid-template-columns:145px 1fr;gap:1.5rem;
+  padding:1.7rem 0;border-top:1px solid var(--rule-soft)}
 .job:first-of-type{border-top:0;padding-top:.2rem}
-.job-when{font-family:var(--mono);font-size:.74rem;color:var(--faint);padding-top:.25rem;line-height:1.7}
+.job-when{font-family:var(--mono);font-size:.74rem;color:var(--faint);
+  padding-top:.25rem;line-height:1.7}
 .job-when .now{color:var(--green);font-weight:500;display:inline-flex;align-items:center;gap:.35rem}
-.job-when .now::before{
-  content:"";width:6px;height:6px;border-radius:50%;background:var(--green);
-  animation:blip 2.4s ease-in-out infinite;
-}
+.job-when .now::before{content:"";width:6px;height:6px;border-radius:50%;
+  background:var(--green);animation:blip 2.4s ease-in-out infinite}
 @keyframes blip{0%,100%{opacity:1}50%{opacity:.25}}
 .job h3{font-size:1.06rem;font-weight:600;letter-spacing:-.005em}
 .job .org{font-family:var(--mono);font-size:.79rem;color:var(--blue);margin:.22rem 0 .2rem}
@@ -211,39 +206,77 @@ section{padding-top:3.6rem}
 .job li strong{color:var(--ink);font-weight:600}
 
 /* ---------- SKILLS ---------- */
-.skillset{display:grid;grid-template-columns:145px 1fr;gap:1.5rem;padding:1rem 0;border-top:1px solid var(--rule-soft)}
+.skillset{display:grid;grid-template-columns:145px 1fr;gap:1.5rem;
+  padding:1rem 0;border-top:1px solid var(--rule-soft)}
 .skillset:first-of-type{border-top:0}
-.skillset h4{
-  font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;
-  color:var(--faint);font-weight:500;padding-top:.35rem;
-}
+.skillset h4{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;
+  letter-spacing:.07em;color:var(--faint);font-weight:500;padding-top:.35rem}
 .tags{display:flex;flex-wrap:wrap;gap:.35rem}
-.tag{
-  font-family:var(--mono);font-size:.745rem;background:var(--card);
+.tag{font-family:var(--mono);font-size:.745rem;background:var(--card);
   border:1px solid var(--rule);border-radius:3px;padding:.2rem .5rem;color:var(--slate);
-  transition:border-color .18s,color .18s,transform .18s var(--ease);
-}
+  transition:border-color .18s,color .18s,transform .18s var(--ease)}
 .tag:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
 
 /* ---------- PROJECTS ---------- */
-.projects{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));
-  gap:1px;background:var(--rule);border:1px solid var(--rule);
-}
-.proj{background:var(--card);padding:1.4rem;transition:background .2s,transform .25s var(--ease)}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));
+  gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.proj{background:var(--card);padding:1.4rem;display:flex;flex-direction:column;
+  transition:background .2s,transform .25s var(--ease)}
 .proj:hover{background:#FBFCFC;transform:translateY(-2px)}
 .proj .pairs{width:34px;margin-bottom:.85rem}
 .proj h3{font-size:.97rem;font-weight:600;margin-bottom:.4rem}
-.proj p{font-size:.87rem;color:var(--slate)}
-.proj .stack{font-family:var(--mono);font-size:.71rem;color:var(--faint);margin-top:.8rem;line-height:1.7}
+.proj p{font-size:.87rem;color:var(--slate);flex:1}
+.proj .stack{font-family:var(--mono);font-size:.71rem;color:var(--faint);
+  margin-top:.8rem;line-height:1.7}
+.plinks{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem}
+.plink{display:inline-flex;align-items:center;gap:.35rem;font-family:var(--mono);
+  font-size:.7rem;text-decoration:none;color:var(--slate);border:1px solid var(--rule);
+  border-radius:3px;padding:.2rem .5rem;
+  transition:color .2s,border-color .2s,transform .2s var(--ease)}
+.plink:hover{color:var(--blue);border-color:var(--blue);transform:translateY(-1px)}
+.plink svg{width:12px;height:12px}
+.badge{display:inline-flex;align-items:center;gap:.3rem;font-family:var(--mono);
+  font-size:.68rem;color:var(--orange);border:1px solid var(--orange);
+  border-radius:3px;padding:.15rem .45rem;background:rgba(224,123,44,.06)}
+
+/* ---------- GITHUB ---------- */
+.ghstats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--rule);border:1px solid var(--rule);margin-bottom:1.2rem}
+.ghstat{background:var(--card);padding:1.1rem 1rem}
+.ghstat .top{display:flex;align-items:center;gap:.45rem;color:var(--faint);
+  font-family:var(--mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.09em}
+.ghstat b{display:block;font-family:var(--display);font-size:1.75rem;font-weight:700;
+  line-height:1;margin-top:.55rem;letter-spacing:-.02em}
+
+.langbar{display:flex;height:9px;border-radius:5px;overflow:hidden;
+  border:1px solid var(--rule);background:var(--card)}
+.langbar i{display:block;height:100%;width:0;transition:width .9s var(--ease)}
+.langkey{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:.7rem;
+  font-family:var(--mono);font-size:.71rem;color:var(--slate)}
+.langkey span{display:inline-flex;align-items:center;gap:.35rem}
+.langkey s{width:8px;height:8px;border-radius:50%;text-decoration:none;flex:none}
+
+.repos{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:.55rem;margin-top:1.4rem}
+.repo{display:block;text-decoration:none;background:var(--card);
+  border:1px solid var(--rule);border-radius:4px;padding:.85rem 1rem;
+  transition:border-color .2s,transform .25s var(--ease),box-shadow .25s var(--ease)}
+.repo:hover{border-color:var(--blue);transform:translateY(-2px);
+  box-shadow:0 5px 16px rgba(20,23,26,.07)}
+.repo .nm{display:flex;align-items:center;gap:.4rem;font-family:var(--mono);
+  font-size:.8rem;color:var(--blue);font-weight:500}
+.repo p{font-size:.8rem;color:var(--slate);margin-top:.35rem;line-height:1.5}
+.repo .meta{display:flex;gap:.9rem;margin-top:.6rem;font-family:var(--mono);
+  font-size:.68rem;color:var(--faint)}
+.repo .meta span{display:inline-flex;align-items:center;gap:.28rem}
+.repo .meta s{width:8px;height:8px;border-radius:50%;text-decoration:none}
+.ghnote{font-family:var(--mono);font-size:.68rem;color:var(--faint);margin-top:1rem}
 
 /* ---------- CERTS ---------- */
 .certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.6rem}
-.cert{
-  display:flex;gap:.75rem;align-items:flex-start;background:var(--card);
+.cert{display:flex;gap:.75rem;align-items:flex-start;background:var(--card);
   border:1px solid var(--rule);border-radius:4px;padding:.85rem 1rem;
-  transition:border-color .2s,transform .2s var(--ease);
-}
+  transition:border-color .2s,transform .2s var(--ease)}
 .cert:hover{border-color:var(--blue);transform:translateY(-2px)}
 .cert .mark{width:3px;align-self:stretch;border-radius:2px;background:var(--blue);flex:none}
 .cert:nth-child(2) .mark{background:var(--orange)}
@@ -255,23 +288,34 @@ section{padding-top:3.6rem}
 .cert span{font-family:var(--mono);font-size:.7rem;color:var(--faint)}
 
 /* ---------- EDUCATION ---------- */
-.edu{display:grid;grid-template-columns:145px 1fr;gap:1.5rem;padding:1rem 0;border-top:1px solid var(--rule-soft)}
+.edu{display:grid;grid-template-columns:145px 1fr;gap:1.5rem;
+  padding:1rem 0;border-top:1px solid var(--rule-soft)}
 .edu:first-of-type{border-top:0}
 .edu .label{font-family:var(--mono);font-size:.74rem;color:var(--faint);padding-top:.15rem}
 .edu strong{font-weight:600;font-size:.97rem}
 .edu span{display:block;color:var(--slate);font-size:.88rem}
-
-/* ---------- AWARDS ---------- */
 .awards{display:flex;flex-wrap:wrap;gap:.45rem}
-.awards span{
-  font-family:var(--mono);font-size:.745rem;color:var(--slate);
-  border-left:2px solid var(--rule);padding:.12rem .7rem;
-  transition:border-color .2s,color .2s;
-}
+.awards span{font-family:var(--mono);font-size:.745rem;color:var(--slate);
+  border-left:2px solid var(--rule);padding:.12rem .7rem;transition:border-color .2s,color .2s}
 .awards span:hover{border-color:var(--orange);color:var(--ink)}
 
-/* ---------- FOOTER ---------- */
-footer{margin-top:4rem;padding:2rem 0 3rem;border-top:1px solid var(--rule)}
+/* ---------- CTA + FOOTER ---------- */
+.cta{margin-top:3.4rem;border:1px solid var(--rule);background:var(--card);
+  border-radius:5px;padding:1.6rem;display:flex;flex-wrap:wrap;gap:1.2rem;
+  align-items:center;justify-content:space-between}
+.cta h3{font-family:var(--display);font-size:1.15rem;font-weight:600}
+.cta p{font-size:.88rem;color:var(--slate);margin-top:.25rem}
+.btns{display:flex;flex-wrap:wrap;gap:.5rem}
+.btn{display:inline-flex;align-items:center;gap:.45rem;text-decoration:none;
+  font-family:var(--mono);font-size:.78rem;padding:.55rem .95rem;border-radius:4px;
+  border:1px solid var(--ink);color:var(--card);background:var(--ink);
+  transition:transform .2s var(--ease),box-shadow .2s var(--ease),opacity .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(20,23,26,.18)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.wa{background:#25D366;border-color:#25D366;color:#0B3D22}
+
+footer{margin-top:3rem;padding:2rem 0 3rem;border-top:1px solid var(--rule)}
 .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:flex-end}
 footer p{font-family:var(--mono);font-size:.73rem;color:var(--faint);line-height:1.9}
 footer a{color:var(--slate);text-decoration:none;border-bottom:1px solid var(--rule)}
@@ -280,21 +324,21 @@ footer a:hover{color:var(--blue);border-color:var(--blue)}
 /* ==========================================================
    MOTION
    ========================================================== */
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.reveal{opacity:0;transform:translateY(16px);
+  transition:opacity .65s var(--ease),transform .65s var(--ease)}
 .reveal.in{opacity:1;transform:none}
-
 .rise{opacity:0;transform:translateY(12px);animation:rise .6s var(--ease) forwards}
 .d1{animation-delay:.05s}.d2{animation-delay:.14s}.d3{animation-delay:.23s}
-.d4{animation-delay:.32s}.d5{animation-delay:.42s}
+.d4{animation-delay:.32s}.d5{animation-delay:.42s}.d6{animation-delay:.52s}
 @keyframes rise{to{opacity:1;transform:none}}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .rise,.reveal,.pairs i,.topo .edge,.topo .node{
     animation:none!important;transition:none!important;
-    opacity:1!important;transform:none!important;stroke-dashoffset:0!important;
-  }
+    opacity:1!important;transform:none!important;stroke-dashoffset:0!important}
   .topo .core-ring,.job-when .now::before{animation:none!important}
+  .langbar i{transition:none!important}
 }
 
 /* ==========================================================
@@ -310,19 +354,22 @@ footer a:hover{color:var(--blue);border-color:var(--blue)}
   .scale{grid-template-columns:repeat(2,1fr)}
   .scale div:nth-child(2){border-right:0}
   .scale div:nth-child(1),.scale div:nth-child(2){border-bottom:1px solid var(--rule-soft)}
+  .ghstats{grid-template-columns:repeat(2,1fr)}
   .topo{display:none}
+  .cta{flex-direction:column;align-items:flex-start}
 }
 
 /* ==========================================================
-   PRINT — Ctrl+P gives a clean PDF resume
+   PRINT
    ========================================================== */
 @media print{
   body{background:#fff;font-size:10pt}
-  .topbar,.nav,.topo{display:none}
+  .topbar,.nav,.topo,.socials,.cta,.langbar,.langkey,.repos{display:none}
   .layout{grid-template-columns:1fr;gap:0;padding:0}
   .rail{position:static}
+  .photo{width:80px;height:80px}
   section{padding-top:1.2rem;break-inside:avoid}
-  .job,.proj,.cert{break-inside:avoid}
+  .job,.proj,.cert,.ghstat{break-inside:avoid}
   .hero{padding:.5rem 0}
   .hero h1{font-size:24pt}
   .reveal{opacity:1!important;transform:none!important}
@@ -333,6 +380,26 @@ footer a:hover{color:var(--blue);border-color:var(--blue)}
 
 <body>
 
+<!-- ICON SPRITE -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2.5 7l9.5 6 9.5-6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h3.5l1.8 4.5-2.3 1.4a11.5 11.5 0 005.1 5.1l1.4-2.3L20 13.5V17a2 2 0 01-2.2 2A15.5 15.5 0 014 5.2 2 2 0 016 3z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5S19 15.8 19 10.5a7 7 0 10-14 0c0 5.3 7 11 7 11z"/><circle cx="12" cy="10.3" r="2.6"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 21.2a9.2 9.2 0 01-4.6-1.2l-4.6 1.3 1.3-4.5A9.2 9.2 0 1112 21.2z"/><path d="M9.3 8.9c.2-.4.4-.4.6-.4h.5c.2 0 .4 0 .5.4l.6 1.3c.1.2 0 .4-.1.5l-.3.4c-.1.2-.2.3-.1.5.2.3.7 1 1.3 1.6.7.7 1.3 1 1.6 1.1.2.1.3.1.5-.1l.4-.5c.1-.2.3-.2.5-.1l1.2.6c.2.1.4.2.4.4s0 .7-.2 1c-.2.3-.8.6-1.3.6-1 0-2.7-.7-4.1-2.1-1.4-1.4-2.2-3-2.2-4 0-.5.2-1 .5-1.3z"/></symbol>
+  <symbol id="i-li" viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="3.2"/><circle cx="7.4" cy="7.9" r="1.25" fill="currentColor" stroke="none"/><path d="M7.4 11.1v6.6"/><path d="M11.6 17.7v-6.6m0 2.4c.4-1.3 1.4-2.4 2.9-2.4 1.7 0 2.7 1.2 2.7 3.1v3.5"/></symbol>
+  <symbol id="i-gh" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 016 0c2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4.2"/><path fill="currentColor" stroke="none" d="M10.2 8.9l5.6 3.1-5.6 3.1z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.8" r="1.15" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.2l2.6 5.5 6 .9-4.3 4.2 1 6-5.3-2.8-5.3 2.8 1-6L3.4 9.6l6-.9z"/></symbol>
+  <symbol id="i-fork" viewBox="0 0 24 24"><circle cx="6" cy="4.8" r="2"/><circle cx="18" cy="4.8" r="2"/><circle cx="12" cy="19.2" r="2"/><path d="M6 6.8v1.7a3 3 0 003 3h6a3 3 0 003-3V6.8"/><path d="M12 11.5v5.7"/></symbol>
+  <symbol id="i-repo" viewBox="0 0 24 24"><path d="M4.5 4.5A2.5 2.5 0 017 2h13v17H7a2.5 2.5 0 00-2.5 2.5z"/><path d="M4.5 19A2.5 2.5 0 017 16.5h13"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="7.8" r="3.2"/><path d="M2.8 20a6.2 6.2 0 0112.4 0"/><path d="M16.2 5a3.2 3.2 0 010 5.7M17.6 14a6.2 6.2 0 013.6 6"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4l-8.5 8.5"/><path d="M18 14v5a1.8 1.8 0 01-1.8 1.8H5A1.8 1.8 0 013.2 19V7.8A1.8 1.8 0 015 6h5"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><path fill="currentColor" stroke="none" d="M10 8.3l6 3.7-6 3.7z"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M8.4 13.6L7 22l5-2.6L17 22l-1.4-8.4"/></symbol>
+  <symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 3.5v11"/><path d="M7.5 10.5L12 15l4.5-4.5"/><path d="M4 18.5v1A1.5 1.5 0 005.5 21h13a1.5 1.5 0 001.5-1.5v-1"/></symbol>
+</svg>
+
 <div class="topbar"><i></i><i></i><i></i><i></i></div>
 
 <div class="wrap">
@@ -340,8 +407,9 @@ footer a:hover{color:var(--blue);border-color:var(--blue)}
 
   <!-- ==================== LEFT RAIL ==================== -->
   <aside class="rail">
-    <div class="rail-name rise d1">Adil Ansari</div>
-    <div class="rail-role rise d2">Senior IT Infrastructure<br>&amp; Network Engineer</div>
+    <img class="photo rise d1" src="/photo.jpg" alt="Adil Ansari" width="112" height="112">
+    <div class="rail-name rise d2">Adil Ansari</div>
+    <div class="rail-role rise d3">IT Infrastructure<br>&amp; Network Engineer</div>
     <div class="pairs"><i></i><i></i><i></i><i></i></div>
 
     <nav>
@@ -350,22 +418,27 @@ footer a:hover{color:var(--blue);border-color:var(--blue)}
         <li><a href="#experience"><em>02</em> Experience</a></li>
         <li><a href="#skills"><em>03</em> Skills</a></li>
         <li><a href="#projects"><em>04</em> Projects &amp; Lab</a></li>
-        <li><a href="#certifications"><em>05</em> Certifications</a></li>
-        <li><a href="#education"><em>06</em> Education</a></li>
+        <li><a href="#github"><em>05</em> Open Source</a></li>
+        <li><a href="#certifications"><em>06</em> Certifications</a></li>
+        <li><a href="#education"><em>07</em> Education</a></li>
       </ul>
     </nav>
 
     <div class="contact">
-      <span class="lbl">Based in</span>
-      Dubai, UAE
-
       <span class="lbl">Contact</span>
-      <a href="mailto:mail@adilansaris.com">mail@adilansaris.com</a><br>
-      <a href="tel:+971581391657">+971 58 139 1657</a>
+      <a class="crow" href="mailto:mail@adilansaris.com"><svg class="ic"><use href="#i-mail"/></svg><span>mail@adilansaris.com</span></a>
+      <a class="crow" href="tel:+971581391657"><svg class="ic"><use href="#i-phone"/></svg><span>+971 58 139 1657</span></a>
+      <div class="crow" style="cursor:default"><svg class="ic"><use href="#i-pin"/></svg><span>Dubai, UAE</span></div>
 
-      <span class="lbl">Elsewhere</span>
-      <a href="https://linkedin.com/in/adilansari57" rel="me">linkedin</a> ·
-      <a href="https://github.com/a3il" rel="me">github</a>
+      <span class="lbl" style="margin-top:1.1rem">Elsewhere</span>
+      <div class="socials">
+        <a class="soc li" href="https://www.linkedin.com/in/adilansari57" target="_blank" rel="me noopener" title="LinkedIn" aria-label="LinkedIn"><svg class="ic"><use href="#i-li"/></svg></a>
+        <a class="soc gh" href="https://github.com/a3il" target="_blank" rel="me noopener" title="GitHub" aria-label="GitHub"><svg class="ic"><use href="#i-gh"/></svg></a>
+        <a class="soc yt" href="https://www.youtube.com/@adilansari57" target="_blank" rel="me noopener" title="YouTube" aria-label="YouTube"><svg class="ic"><use href="#i-yt"/></svg></a>
+        <a class="soc ig" href="https://www.instagram.com/a3il.a" target="_blank" rel="me noopener" title="Instagram" aria-label="Instagram"><svg class="ic"><use href="#i-ig"/></svg></a>
+        <a class="soc wa" href="https://wa.me/971581391657?text=Hi%20Adil%2C%20I%20contacted%20you%20from%20your%20website." target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp"><svg class="ic"><use href="#i-wa"/></svg></a>
+        <a class="soc em" href="mailto:mail@adilansaris.com" title="Email" aria-label="Email"><svg class="ic"><use href="#i-mail"/></svg></a>
+      </div>
     </div>
   </aside>
 
@@ -379,32 +452,29 @@ footer a:hover{color:var(--blue);border-color:var(--blue)}
         I hold <strong>end-to-end ownership</strong> of the network, data centre, server and
         enterprise application estate for a regional trading group operating across the UAE,
         Qatar and Bahrain. I set the architecture standards, run the OEM and vendor
-        relationships, lead the migration and rollout programmes, and carry final escalation
-        on every P1. Before this: carrier networking at BSNL, RF and machine-learning research
-        at IIT Patna, and enterprise security integration. Nothing reaches a live network until
-        it has been proven in a production-grade lab.
+        relationships across Cisco, Huawei, Aruba, Meraki, Fortinet, Sophos, Microsoft and SAP,
+        lead the migration and rollout programmes, and carry final escalation on every P1.
+        Before this: carrier and managed-service networking at BSNL, RF and machine-learning
+        research at IIT Patna, and enterprise security integration. Nothing reaches a live
+        network until it has been proven in a production-grade lab.
       </p>
 
       <div class="scale rise d4">
-        <div><b data-count="400">0</b><small>Users supported</small></div>
+        <div><b><span data-count="400">0</span><i>+</i></b><small>End users supported</small></div>
         <div><b data-count="5">0</b><small>Branches</small></div>
         <div><b data-count="30">0</b><small>Warehouses</small></div>
         <div><b data-count="3">0</b><small>Countries</small></div>
       </div>
 
-      <!-- topology strip -->
       <div class="topo rise d5" aria-hidden="true">
         <svg viewBox="0 0 760 150" xmlns="http://www.w3.org/2000/svg" role="presentation">
-          <!-- edges in -->
           <path class="edge" pathLength="1" style="animation-delay:.45s" d="M 110 30 C 220 30, 260 75, 375 75"/>
           <path class="edge" pathLength="1" style="animation-delay:.55s" d="M 110 75 L 375 75"/>
           <path class="edge" pathLength="1" style="animation-delay:.65s" d="M 110 120 C 220 120, 260 75, 375 75"/>
-          <!-- edges out -->
           <path class="edge" pathLength="1" style="animation-delay:.85s" d="M 385 75 C 500 75, 540 30, 650 30"/>
           <path class="edge" pathLength="1" style="animation-delay:.95s" d="M 385 75 L 650 75"/>
           <path class="edge" pathLength="1" style="animation-delay:1.05s" d="M 385 75 C 500 75, 540 120, 650 120"/>
 
-          <!-- site nodes -->
           <g class="node" style="animation-delay:.35s">
             <circle cx="110" cy="30" r="4" fill="#1E5FA8"/>
             <text x="98" y="33" text-anchor="end">UAE</text>
@@ -417,26 +487,19 @@ footer a:hover{color:var(--blue);border-color:var(--blue)}
             <circle cx="110" cy="120" r="4" fill="#2E8B57"/>
             <text x="98" y="123" text-anchor="end">BAHRAIN</text>
           </g>
-
-          <!-- core -->
           <g class="node" style="animation-delay:.75s">
             <circle class="core-ring" cx="380" cy="75" r="13" fill="none" stroke="#1E5FA8" stroke-width="1"/>
             <rect x="373" y="68" width="14" height="14" transform="rotate(45 380 75)" fill="#14171A"/>
             <text class="cap" x="380" y="104" text-anchor="middle">Core</text>
           </g>
-
-          <!-- service nodes -->
           <g class="node" style="animation-delay:1.15s">
-            <circle cx="650" cy="30" r="4" fill="#14171A"/>
-            <text x="662" y="33">SAP · HANA</text>
+            <circle cx="650" cy="30" r="4" fill="#14171A"/><text x="662" y="33">SAP · HANA</text>
           </g>
           <g class="node" style="animation-delay:1.25s">
-            <circle cx="650" cy="75" r="4" fill="#14171A"/>
-            <text x="662" y="78">M365 · AD</text>
+            <circle cx="650" cy="75" r="4" fill="#14171A"/><text x="662" y="78">M365 · AD</text>
           </g>
           <g class="node" style="animation-delay:1.35s">
-            <circle cx="650" cy="120" r="4" fill="#14171A"/>
-            <text x="662" y="123">BACKUP · DR</text>
+            <circle cx="650" cy="120" r="4" fill="#14171A"/><text x="662" y="123">BACKUP · DR</text>
           </g>
         </svg>
       </div>
@@ -446,23 +509,14 @@ footer a:hover{color:var(--blue);border-color:var(--blue)}
     <section id="focus">
       <div class="sec-head reveal"><span class="num">01</span><h2>Focus</h2><div class="rule"></div></div>
       <div class="focus reveal">
-        <span>Data Centre Operations</span>
-        <span>Capacity Planning</span>
-        <span>Enterprise LAN/WAN Architecture</span>
-        <span>Routing &amp; Switching</span>
-        <span>OSPF · BGP · MPLS L3VPN</span>
-        <span>SD-WAN</span>
-        <span>Network Security &amp; Zero Trust</span>
-        <span>Hybrid Cloud — AWS · Azure</span>
-        <span>Infrastructure as Code</span>
-        <span>Containerisation</span>
-        <span>Virtualisation</span>
-        <span>Backup, DR &amp; Continuity</span>
-        <span>ITIL Service Management</span>
-        <span>Monitoring &amp; Observability</span>
-        <span>ERP Infrastructure</span>
-        <span>Multi-Vendor &amp; OEM Management</span>
-        <span>Audit &amp; Compliance</span>
+        <span>Data Centre Operations</span><span>Capacity Planning</span>
+        <span>Enterprise LAN/WAN Architecture</span><span>Routing &amp; Switching</span>
+        <span>OSPF · BGP · EIGRP</span><span>MPLS L3VPN</span><span>SD-WAN</span>
+        <span>Network Security &amp; Zero Trust</span><span>Hybrid Cloud — AWS · Azure</span>
+        <span>Infrastructure as Code</span><span>Containerisation</span><span>Virtualisation</span>
+        <span>Backup, DR &amp; Continuity</span><span>ITIL Service Management</span>
+        <span>Monitoring &amp; Observability</span><span>ERP Infrastructure</span>
+        <span>Multi-Vendor &amp; OEM Management</span><span>Audit &amp; Compliance</span>
       </div>
     </section>
 
@@ -478,19 +532,20 @@ footer a:hover{color:var(--blue);border-color:var(--blue)}
           <div class="ctx">Regional trading group · UAE · Qatar · Bahrain · 400+ users</div>
           <ul>
             <li><strong>Own the full estate</strong> — network, server, data centre and enterprise application infrastructure across every regional site, with final escalation authority on business-critical systems.</li>
-            <li>Architect and operate multi-vendor <strong>Cisco and Huawei</strong> switching: VLAN design, 802.1Q trunking, EtherChannel, STP/RSTP, inter-VLAN routing and Layer 2/3 services underpinning the multi-site WAN.</li>
-            <li>Run the <strong>Fortinet FortiGate and Sophos XGS</strong> firewall estate — policy design, NAT, IPsec site-to-site VPN, SSL VPN and ZTNA protecting inter-branch and remote access across three countries.</li>
-            <li>Operate server room and data centre infrastructure end to end: rack-and-stack, structured cabling, power distribution, UPS, cooling and environmental controls, plus physical capacity planning for branch expansion.</li>
-            <li>Administer Windows Server and Linux estates — Active Directory, DNS, DHCP, Group Policy, file and storage services — virtualised across <strong>VMware, Hyper-V and Proxmox VE</strong>.</li>
-            <li>Own backup, disaster recovery and business continuity on <strong>Veeam</strong>, including restore verification testing and DR runbook maintenance.</li>
-            <li>Automate provisioning and configuration management with <strong>Ansible and Terraform</strong>, replacing manual builds with repeatable, version-controlled deployments.</li>
-            <li>Deploy and operate containerised workloads on <strong>Docker and Kubernetes</strong> for internal service hosting.</li>
-            <li>Lead ITIL-aligned service delivery across <strong>ServiceNow and ManageEngine</strong> — incident, problem and change management, SLA governance, CMDB accuracy and knowledge-base ownership.</li>
-            <li>Own infrastructure for <strong>SAP S/4HANA and SAP Business One</strong> — server and HANA availability, performance tuning, integration support and direct escalation to SAP partners.</li>
+            <li>Architect and operate multi-vendor switching and wireless across <strong>Cisco Catalyst, Cisco Meraki, Huawei, Aruba, HPE and Ubiquiti</strong>: VLAN design, 802.1Q trunking, EtherChannel, STP/RSTP, HSRP/VRRP redundancy, inter-VLAN routing and Layer 2/3 services underpinning the multi-site WAN.</li>
+            <li>Run the <strong>Fortinet FortiGate and Sophos XGS</strong> firewall estate — policy design, NAT, IPsec site-to-site VPN, SSL VPN, IDS/IPS, network segmentation and ZTNA protecting inter-branch and remote access across three countries.</li>
+            <li>Operate server room and data centre infrastructure end to end: <strong>Dell PowerEdge</strong> rack-and-stack, iDRAC, RAID, structured cabling, power distribution, UPS, cooling and environmental controls, plus physical capacity planning for branch expansion.</li>
+            <li>Administer Windows Server and Linux estates — <strong>Active Directory</strong>, DNS, DHCP, Group Policy, file and storage services on NAS/SAN — virtualised across <strong>VMware vSphere, Hyper-V and Proxmox VE</strong>.</li>
+            <li>Own backup, disaster recovery and business continuity on <strong>Veeam Backup &amp; Replication</strong>, including restore verification testing and DR runbook maintenance.</li>
+            <li>Automate provisioning and configuration management with <strong>Ansible and Terraform</strong>, replacing manual builds with repeatable, version-controlled deployments in Git.</li>
+            <li>Deploy and operate containerised workloads on <strong>Docker and Kubernetes</strong> — cluster provisioning, service exposure, persistent storage and self-healing.</li>
+            <li>Run proactive monitoring and observability with <strong>Zabbix, SolarWinds, Grafana and Dynatrace</strong> over SNMP, NetFlow and Syslog, with Wireshark packet analysis for deep fault diagnosis.</li>
+            <li>Lead ITIL-aligned service delivery across <strong>ServiceNow, ManageEngine and Jira</strong> — incident, problem and change management, SLA governance, CMDB accuracy and knowledge-base ownership.</li>
+            <li>Own infrastructure for <strong>SAP S/4HANA and SAP Business One</strong> — server and HANA database availability, performance tuning, integration support and direct escalation to SAP partners.</li>
             <li>Deliver the <strong>Power BI to SAP HANA</strong> reporting pipeline used by leadership for sales, inventory, finance and ageing analysis.</li>
-            <li>Administer the <strong>Microsoft 365</strong> tenant — identity and access, conditional access, licensing, endpoint connectivity and enterprise mail flow.</li>
-            <li>Manage enterprise Wi-Fi, VoIP/PBX, CCTV and ELV across all sites, including design input on new branch fitouts.</li>
-            <li>Drive multi-vendor and OEM relationships across ISPs, Cisco, Huawei, Fortinet, Sophos, Microsoft and SAP — procurement, licensing renewals, upgrade programmes, migrations and P1 escalations.</li>
+            <li>Administer the <strong>Microsoft 365</strong> tenant — identity and access management, conditional access, licensing, endpoint connectivity and enterprise mail flow — plus Docuware DMS and UAE e-invoicing platform integrations.</li>
+            <li>Manage enterprise Wi-Fi, VoIP/PBX, CCTV and ELV systems across all sites, including design input on new branch fitouts.</li>
+            <li>Drive multi-vendor and OEM relationships across ISPs, <strong>Cisco, Huawei, Aruba, Fortinet, Sophos, Dell, Microsoft and SAP</strong> — procurement, licensing renewals, upgrade programmes, migrations and P1 escalations.</li>
             <li>Maintain the documentation baseline: topology diagrams, asset inventory, configuration standards, DR runbooks and audit-ready operational records.</li>
           </ul>
         </div>
@@ -503,12 +558,12 @@ footer a:hover{color:var(--blue);border-color:var(--blue)}
           <div class="org">Firepro Star Safety &amp; Security L.L.C — Dubai, UAE</div>
           <div class="ctx">Fire, safety &amp; security systems integrator</div>
           <ul>
-            <li>Primary escalation point for LAN/WAN, Windows systems and network-security incidents across a multi-service operating environment.</li>
-            <li>Engineered FortiGate security policy, NAT, site-to-site IPsec and SSL VPN tunnels delivering secure inter-site and remote connectivity.</li>
+            <li>Primary escalation point for LAN/WAN, Windows Server and network-security incidents across a multi-service operating environment.</li>
+            <li>Engineered <strong>FortiGate</strong> security policy, NAT, site-to-site IPsec and SSL VPN tunnels delivering secure inter-site and remote connectivity.</li>
             <li>Deployed <strong>Zero Trust Network Access</strong> and hardened the remote-access architecture to enterprise security standards.</li>
-            <li>Built and managed <strong>AWS hybrid-cloud networking</strong> — VPC design, subnetting, route tables, security groups, and CloudWatch monitoring, alerting and log retention.</li>
+            <li>Built and managed <strong>AWS hybrid-cloud networking</strong> — VPC design, subnetting, route tables, security groups, IAM, and CloudWatch monitoring, alerting and log retention.</li>
             <li>Implemented proactive monitoring with <strong>Zabbix, SNMP and Syslog</strong>, moving the team from reactive break-fix to pre-emptive fault detection.</li>
-            <li>Drove structured root-cause analysis on recurring network, endpoint and application incidents, reducing repeat-incident volume.</li>
+            <li>Drove structured root-cause analysis on recurring network, endpoint and application incidents through ITSM workflows, reducing repeat-incident volume.</li>
             <li>Authored SIRA security compliance reports and audit documentation underpinning regulatory certification.</li>
           </ul>
         </div>
@@ -533,13 +588,14 @@ footer a:hover{color:var(--blue);border-color:var(--blue)}
         <div>
           <h3>Network Engineer</h3>
           <div class="org">BSNL — Bharat Sanchar Nigam Ltd. — Kerala, India</div>
-          <div class="ctx">National telecommunications carrier / ISP</div>
+          <div class="ctx">National telecom carrier · ISP &amp; Managed Service Provider (MSP)</div>
           <ul>
             <li>Configured and validated <strong>OSPF, BGP and MPLS L3VPN</strong>, VLAN trunking and routing policy in carrier-grade service-provider environments.</li>
-            <li>Direct operational exposure to IP/MPLS core architecture, carrier networking and ISP service delivery, including circuit provisioning workflows.</li>
-            <li>Configured VoIP/PBX services and engineered QoS policy to prioritise and protect voice traffic across shared transport.</li>
+            <li>Delivered managed-service network operations for enterprise customers, including circuit provisioning workflows and IP/MPLS core architecture exposure.</li>
+            <li>Configured VoIP/PBX services and engineered <strong>QoS</strong> policy to prioritise and protect voice traffic across shared transport.</li>
             <li>Analysed SNMP traps, NetFlow and Syslog telemetry within NOC monitoring platforms for proactive fault detection and escalation.</li>
-            <li>Contributed to SD-WAN trials evaluating hybrid MPLS and broadband transport for next-generation WAN architecture.</li>
+            <li>Contributed to <strong>SD-WAN</strong> trials evaluating hybrid MPLS and broadband transport for next-generation WAN architecture.</li>
+            <li>Produced carrier-standard network diagrams, configuration records and technical documentation.</li>
           </ul>
         </div>
       </article>
@@ -562,111 +618,80 @@ footer a:hover{color:var(--blue);border-color:var(--blue)}
     <section id="skills">
       <div class="sec-head reveal"><span class="num">03</span><h2>Technical Skills</h2><div class="rule"></div></div>
 
-      <div class="skillset reveal">
-        <h4>Networking</h4>
-        <div class="tags">
-          <span class="tag">TCP/IP</span><span class="tag">IPv4/IPv6</span><span class="tag">LAN/WAN</span>
-          <span class="tag">VLAN</span><span class="tag">802.1Q</span><span class="tag">STP/RSTP</span>
-          <span class="tag">EtherChannel</span><span class="tag">OSPF</span><span class="tag">BGP</span>
-          <span class="tag">EIGRP</span><span class="tag">MPLS L3VPN</span><span class="tag">HSRP/VRRP</span>
-          <span class="tag">NAT</span><span class="tag">ACL</span><span class="tag">QoS</span><span class="tag">SD-WAN</span>
-        </div>
-      </div>
+      <div class="skillset reveal"><h4>Networking</h4><div class="tags">
+        <span class="tag">TCP/IP</span><span class="tag">IPv4/IPv6</span><span class="tag">LAN/WAN</span>
+        <span class="tag">VLAN</span><span class="tag">802.1Q</span><span class="tag">STP/RSTP</span>
+        <span class="tag">EtherChannel</span><span class="tag">OSPF</span><span class="tag">BGP</span>
+        <span class="tag">EIGRP</span><span class="tag">MPLS L3VPN</span><span class="tag">HSRP/VRRP</span>
+        <span class="tag">NAT</span><span class="tag">ACL</span><span class="tag">QoS</span>
+        <span class="tag">SD-WAN</span><span class="tag">NAC</span><span class="tag">Network Design</span>
+      </div></div>
 
-      <div class="skillset reveal">
-        <h4>Data Centre</h4>
-        <div class="tags">
-          <span class="tag">Rack &amp; Stack</span><span class="tag">Structured Cabling</span>
-          <span class="tag">Power Distribution</span><span class="tag">UPS Systems</span>
-          <span class="tag">Cooling &amp; Environmental</span><span class="tag">Capacity Planning</span>
-          <span class="tag">Asset Management</span><span class="tag">DR &amp; Continuity</span>
-          <span class="tag">24/7 Operations</span>
-        </div>
-      </div>
+      <div class="skillset reveal"><h4>Network Hardware</h4><div class="tags">
+        <span class="tag">Cisco Catalyst</span><span class="tag">Cisco Meraki</span><span class="tag">Cisco ISR/ASR</span>
+        <span class="tag">Huawei</span><span class="tag">Aruba</span><span class="tag">HPE</span>
+        <span class="tag">Ubiquiti UniFi</span><span class="tag">MikroTik</span>
+        <span class="tag">Wireless Controllers</span><span class="tag">PoE Switching</span>
+      </div></div>
 
-      <div class="skillset reveal">
-        <h4>Security</h4>
-        <div class="tags">
-          <span class="tag">FortiGate</span><span class="tag">Sophos XGS</span><span class="tag">IPsec VPN</span>
-          <span class="tag">SSL VPN</span><span class="tag">ZTNA</span><span class="tag">IDS/IPS</span>
-          <span class="tag">Network Segmentation</span><span class="tag">Firewall Policy</span>
-          <span class="tag">Tailscale</span>
-        </div>
-      </div>
+      <div class="skillset reveal"><h4>Data Centre</h4><div class="tags">
+        <span class="tag">Rack &amp; Stack</span><span class="tag">Structured Cabling</span>
+        <span class="tag">Power Distribution</span><span class="tag">UPS Systems</span>
+        <span class="tag">Cooling &amp; Environmental</span><span class="tag">Capacity Planning</span>
+        <span class="tag">Asset Management</span><span class="tag">DR &amp; Continuity</span>
+        <span class="tag">24/7 Operations</span>
+      </div></div>
 
-      <div class="skillset reveal">
-        <h4>Cloud &amp; Virtualisation</h4>
-        <div class="tags">
-          <span class="tag">AWS VPC</span><span class="tag">EC2</span><span class="tag">CloudWatch</span>
-          <span class="tag">IAM</span><span class="tag">Microsoft Azure</span><span class="tag">VMware vSphere</span>
-          <span class="tag">Hyper-V</span><span class="tag">Proxmox VE</span><span class="tag">Hybrid Cloud</span>
-        </div>
-      </div>
+      <div class="skillset reveal"><h4>Security</h4><div class="tags">
+        <span class="tag">Fortinet FortiGate</span><span class="tag">Sophos XGS</span><span class="tag">IPsec VPN</span>
+        <span class="tag">SSL VPN</span><span class="tag">ZTNA</span><span class="tag">IDS/IPS</span>
+        <span class="tag">Network Segmentation</span><span class="tag">Firewall Policy</span>
+        <span class="tag">AWS Security Groups</span><span class="tag">Tailscale</span>
+      </div></div>
 
-      <div class="skillset reveal">
-        <h4>Automation &amp; IaC</h4>
-        <div class="tags">
-          <span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">Docker</span>
-          <span class="tag">Kubernetes</span><span class="tag">Python</span><span class="tag">PowerShell</span>
-          <span class="tag">Bash</span><span class="tag">Git</span><span class="tag">REST APIs</span>
-          <span class="tag">CI/CD</span>
-        </div>
-      </div>
+      <div class="skillset reveal"><h4>Cloud &amp; Virtualisation</h4><div class="tags">
+        <span class="tag">AWS VPC</span><span class="tag">EC2</span><span class="tag">Route Tables</span>
+        <span class="tag">CloudWatch</span><span class="tag">IAM</span><span class="tag">Microsoft Azure</span>
+        <span class="tag">VMware vSphere</span><span class="tag">Hyper-V</span><span class="tag">Proxmox VE</span>
+        <span class="tag">Hybrid Cloud</span>
+      </div></div>
 
-      <div class="skillset reveal">
-        <h4>Systems &amp; Storage</h4>
-        <div class="tags">
-          <span class="tag">Windows Server</span><span class="tag">Active Directory</span><span class="tag">DNS</span>
-          <span class="tag">DHCP</span><span class="tag">Group Policy</span><span class="tag">RHEL/Ubuntu</span>
-          <span class="tag">Dell PowerEdge</span><span class="tag">iDRAC</span><span class="tag">RAID</span>
-          <span class="tag">NAS/SAN</span><span class="tag">Veeam</span>
-        </div>
-      </div>
+      <div class="skillset reveal"><h4>Automation &amp; IaC</h4><div class="tags">
+        <span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">Docker</span>
+        <span class="tag">Kubernetes</span><span class="tag">Python</span><span class="tag">PowerShell</span>
+        <span class="tag">Bash</span><span class="tag">Git/GitHub</span><span class="tag">REST APIs</span>
+        <span class="tag">CI/CD</span>
+      </div></div>
 
-      <div class="skillset reveal">
-        <h4>Monitoring</h4>
-        <div class="tags">
-          <span class="tag">Zabbix</span><span class="tag">SolarWinds</span><span class="tag">Grafana</span>
-          <span class="tag">Dynatrace</span><span class="tag">SNMP</span><span class="tag">NetFlow</span>
-          <span class="tag">Syslog</span><span class="tag">Wireshark</span>
-        </div>
-      </div>
+      <div class="skillset reveal"><h4>Systems &amp; Storage</h4><div class="tags">
+        <span class="tag">Windows Server</span><span class="tag">Active Directory</span><span class="tag">DNS</span>
+        <span class="tag">DHCP</span><span class="tag">Group Policy</span><span class="tag">RHEL/Ubuntu</span>
+        <span class="tag">Dell PowerEdge</span><span class="tag">iDRAC</span><span class="tag">RAID</span>
+        <span class="tag">NAS/SAN</span><span class="tag">TrueNAS</span><span class="tag">Veeam</span>
+      </div></div>
 
-      <div class="skillset reveal">
-        <h4>ITSM &amp; Governance</h4>
-        <div class="tags">
-          <span class="tag">ServiceNow</span><span class="tag">ManageEngine</span><span class="tag">Jira</span>
-          <span class="tag">ITIL</span><span class="tag">SLA Management</span><span class="tag">CMDB</span>
-          <span class="tag">Runbooks</span>
-        </div>
-      </div>
+      <div class="skillset reveal"><h4>Monitoring</h4><div class="tags">
+        <span class="tag">Zabbix</span><span class="tag">SolarWinds</span><span class="tag">Grafana</span>
+        <span class="tag">Dynatrace</span><span class="tag">PRTG</span><span class="tag">SNMP</span>
+        <span class="tag">NetFlow</span><span class="tag">Syslog</span><span class="tag">Wireshark</span>
+      </div></div>
 
-      <div class="skillset reveal">
-        <h4>Enterprise Apps</h4>
-        <div class="tags">
-          <span class="tag">SAP S/4HANA</span><span class="tag">SAP Business One</span><span class="tag">SAP HANA</span>
-          <span class="tag">Microsoft 365</span><span class="tag">Power BI</span><span class="tag">Docuware DMS</span>
-          <span class="tag">E-Invoicing</span>
-        </div>
-      </div>
+      <div class="skillset reveal"><h4>ITSM &amp; Governance</h4><div class="tags">
+        <span class="tag">ServiceNow</span><span class="tag">ManageEngine</span><span class="tag">Jira</span>
+        <span class="tag">ITIL</span><span class="tag">SLA Management</span><span class="tag">CMDB</span>
+        <span class="tag">Runbooks</span><span class="tag">Change Management</span>
+      </div></div>
 
-      <div class="skillset reveal">
-        <h4>Vendors</h4>
-        <div class="tags">
-          <span class="tag">Cisco</span><span class="tag">Huawei</span><span class="tag">Fortinet</span>
-          <span class="tag">Sophos</span><span class="tag">Aruba</span><span class="tag">HP</span>
-          <span class="tag">Ubiquiti</span><span class="tag">Dell</span><span class="tag">Microsoft</span>
-          <span class="tag">SAP</span>
-        </div>
-      </div>
+      <div class="skillset reveal"><h4>Enterprise Apps</h4><div class="tags">
+        <span class="tag">SAP S/4HANA</span><span class="tag">SAP Business One</span><span class="tag">SAP HANA</span>
+        <span class="tag">Microsoft 365</span><span class="tag">Power BI</span><span class="tag">Docuware DMS</span>
+        <span class="tag">E-Invoicing</span><span class="tag">VoIP/PBX</span><span class="tag">CCTV &amp; ELV</span>
+      </div></div>
 
-      <div class="skillset reveal">
-        <h4>Languages</h4>
-        <div class="tags">
-          <span class="tag">English — Fluent</span><span class="tag">Hindi — Fluent</span>
-          <span class="tag">Malayalam — Native</span><span class="tag">Arabic — Reading &amp; Writing</span>
-        </div>
-      </div>
+      <div class="skillset reveal"><h4>Languages</h4><div class="tags">
+        <span class="tag">English — Fluent</span><span class="tag">Hindi — Fluent</span>
+        <span class="tag">Malayalam — Native</span><span class="tag">Arabic — Reading &amp; Writing</span>
+      </div></div>
     </section>
 
     <!-- ==================== PROJECTS ==================== -->
@@ -678,14 +703,14 @@ footer a:hover{color:var(--blue);border-color:var(--blue)}
           <div class="pairs"><i></i><i></i><i></i><i></i></div>
           <h3>Enterprise Home Lab</h3>
           <p>A multi-node Proxmox VE cluster running Windows Server, Linux, virtualised firewalls and core network services — a continuous testbed that mirrors production before anything ships.</p>
-          <div class="stack">Dell PowerEdge R730 · Proxmox VE<br>FortiGate 140E · Cisco Catalyst · TrueNAS</div>
+          <div class="stack">Dell PowerEdge R730 · Proxmox VE<br>FortiGate 140E · Cisco Catalyst · TrueNAS · Aruba</div>
         </article>
 
         <article class="proj">
           <div class="pairs"><i></i><i></i><i></i><i></i></div>
           <h3>Infrastructure as Code</h3>
-          <p>Terraform and Ansible configurations automating VM provisioning, OS baseline hardening and repeatable environment builds.</p>
-          <div class="stack">Terraform · Ansible · Git</div>
+          <p>Terraform and Ansible configurations automating VM provisioning, OS baseline hardening and repeatable, version-controlled environment builds.</p>
+          <div class="stack">Terraform · Ansible · Git · Python</div>
         </article>
 
         <article class="proj">
@@ -705,8 +730,33 @@ footer a:hover{color:var(--blue);border-color:var(--blue)}
         <article class="proj">
           <div class="pairs"><i></i><i></i><i></i><i></i></div>
           <h3>RF Drone Detection &amp; Classification</h3>
-          <p>Software-defined radio and machine-learning pipeline delivering 98.3% real-time RF signal classification accuracy. Research work at IIT Patna.</p>
+          <p>Software-defined radio and machine-learning pipeline delivering 98.3% real-time RF signal classification accuracy. Research work at IIT Patna, published 2024.</p>
           <div class="stack">USRP SDR · FFT · Spectrograms · Python</div>
+          <div class="plinks">
+            <a class="plink" href="https://github.com/a3il/RF_Drone_Classifier" target="_blank" rel="noopener"><svg class="ic"><use href="#i-gh"/></svg>Repository</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="pairs"><i></i><i></i><i></i><i></i></div>
+          <h3>Mission 100K ft</h3>
+          <p>High-altitude, long-distance wireless live-video and telemetry transmission system for a weather-balloon payload.</p>
+          <div class="stack">RF link budget · Telemetry · Live video</div>
+          <div class="plinks">
+            <a class="plink" href="https://github.com/a3il/Misson100K" target="_blank" rel="noopener"><svg class="ic"><use href="#i-gh"/></svg>Repository</a>
+            <a class="plink" href="https://www.youtube.com/@adilansari57" target="_blank" rel="noopener"><svg class="ic"><use href="#i-play"/></svg>Video</a>
+            <span class="badge"><svg class="ic"><use href="#i-award"/></svg>India Book of Records</span>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="pairs"><i></i><i></i><i></i><i></i></div>
+          <h3>Pneumonia Detection with U-Net</h3>
+          <p>Medical-imaging segmentation and classification reaching 96% accuracy using U-Net, CNN and SVM on chest radiographs.</p>
+          <div class="stack">U-Net · CNN · SVM · Python</div>
+          <div class="plinks">
+            <a class="plink" href="https://github.com/a3il/Pneumonia-Detection-UNet" target="_blank" rel="noopener"><svg class="ic"><use href="#i-gh"/></svg>Repository</a>
+          </div>
         </article>
 
         <article class="proj">
@@ -718,61 +768,111 @@ footer a:hover{color:var(--blue);border-color:var(--blue)}
       </div>
     </section>
 
+    <!-- ==================== GITHUB ==================== -->
+    <section id="github">
+      <div class="sec-head reveal"><span class="num">05</span><h2>Open Source</h2><div class="rule"></div></div>
+
+      <div class="reveal">
+        <div class="ghstats">
+          <div class="ghstat">
+            <div class="top"><svg class="ic"><use href="#i-repo"/></svg>Repositories</div>
+            <b id="gh-repos" data-count="16">0</b>
+          </div>
+          <div class="ghstat">
+            <div class="top"><svg class="ic"><use href="#i-star"/></svg>Stars earned</div>
+            <b id="gh-stars" data-count="14">0</b>
+          </div>
+          <div class="ghstat">
+            <div class="top"><svg class="ic"><use href="#i-fork"/></svg>Forks</div>
+            <b id="gh-forks" data-count="5">0</b>
+          </div>
+          <div class="ghstat">
+            <div class="top"><svg class="ic"><use href="#i-users"/></svg>Followers</div>
+            <b id="gh-followers" data-count="4">0</b>
+          </div>
+        </div>
+
+        <div class="langbar" id="langbar" aria-label="Language distribution"></div>
+        <div class="langkey" id="langkey"></div>
+
+        <div class="repos" id="repos">
+          <a class="repo" href="https://github.com/a3il/RF_Drone_Classifier" target="_blank" rel="noopener">
+            <div class="nm"><svg class="ic"><use href="#i-repo"/></svg>RF_Drone_Classifier</div>
+            <p>Drone detection and classification using RF signals — IIT Patna, 2024.</p>
+            <div class="meta"><span><s style="background:#DA5B0B"></s>Jupyter Notebook</span><span><svg class="ic"><use href="#i-star"/></svg>4</span><span><svg class="ic"><use href="#i-fork"/></svg>2</span></div>
+          </a>
+          <a class="repo" href="https://github.com/a3il/EmbeddedAi_Stm32" target="_blank" rel="noopener">
+            <div class="nm"><svg class="ic"><use href="#i-repo"/></svg>EmbeddedAi_Stm32</div>
+            <p>Embedded AI training, classification and deployment to an STM32 board.</p>
+            <div class="meta"><span><s style="background:#555"></s>C</span><span><svg class="ic"><use href="#i-star"/></svg>3</span></div>
+          </a>
+          <a class="repo" href="https://github.com/a3il/LIDAR-Camera-Object-Detection." target="_blank" rel="noopener">
+            <div class="nm"><svg class="ic"><use href="#i-repo"/></svg>LIDAR-Camera-Object-Detection</div>
+            <p>LIDAR and camera fusion for object detection with time-of-flight distance measurement.</p>
+            <div class="meta"><span><svg class="ic"><use href="#i-star"/></svg>3</span><span><svg class="ic"><use href="#i-fork"/></svg>1</span></div>
+          </a>
+          <a class="repo" href="https://github.com/a3il/Pneumonia-Detection-UNet" target="_blank" rel="noopener">
+            <div class="nm"><svg class="ic"><use href="#i-repo"/></svg>Pneumonia-Detection-UNet</div>
+            <p>96% accuracy in pneumonia classification using U-Net, CNN and SVM.</p>
+            <div class="meta"><span><s style="background:#DA5B0B"></s>Jupyter Notebook</span></div>
+          </a>
+          <a class="repo" href="https://github.com/a3il/ARAS-Automatic-Remote-Aquaponic-System" target="_blank" rel="noopener">
+            <div class="nm"><svg class="ic"><use href="#i-repo"/></svg>ARAS</div>
+            <p>IoT cloud-based remote aquaponic system for year-round sustainable production.</p>
+            <div class="meta"><span><s style="background:#F34B7D"></s>C++</span><span><svg class="ic"><use href="#i-star"/></svg>1</span></div>
+          </a>
+          <a class="repo" href="https://github.com/a3il/AirQualityMonitoring" target="_blank" rel="noopener">
+            <div class="nm"><svg class="ic"><use href="#i-repo"/></svg>AirQualityMonitoring</div>
+            <p>IoT air-quality monitoring with laser particle and MQ-135 sensors, visualised in Power BI.</p>
+            <div class="meta"><span><s style="background:#F34B7D"></s>C++</span></div>
+          </a>
+          <a class="repo" href="https://github.com/a3il/Misson100K" target="_blank" rel="noopener">
+            <div class="nm"><svg class="ic"><use href="#i-repo"/></svg>Misson100K</div>
+            <p>High-altitude long-distance wireless live video and telemetry for weather balloons.</p>
+            <div class="meta"><span><svg class="ic"><use href="#i-award"/></svg>India Book of Records</span></div>
+          </a>
+          <a class="repo" href="https://github.com/a3il/slambasedrobot" target="_blank" rel="noopener">
+            <div class="nm"><svg class="ic"><use href="#i-repo"/></svg>slambasedrobot</div>
+            <p>SLAM-based autonomous robot navigation.</p>
+            <div class="meta"><span><s style="background:#3572A5"></s>Python</span><span><svg class="ic"><use href="#i-star"/></svg>1</span></div>
+          </a>
+        </div>
+
+        <p class="ghnote" id="ghnote">Counters update live from the GitHub API.</p>
+      </div>
+    </section>
+
     <!-- ==================== CERTIFICATIONS ==================== -->
     <section id="certifications">
-      <div class="sec-head reveal"><span class="num">05</span><h2>Certifications</h2><div class="rule"></div></div>
-
+      <div class="sec-head reveal"><span class="num">06</span><h2>Certifications</h2><div class="rule"></div></div>
       <div class="certs reveal">
-        <div class="cert"><div class="mark"></div><div>
-          <strong>CDCP — Certified Data Centre Professional</strong>
-          <span>EPI</span>
-        </div></div>
-        <div class="cert"><div class="mark"></div><div>
-          <strong>Cisco CCNP Enterprise — ENCOR</strong>
-          <span>350-401</span>
-        </div></div>
-        <div class="cert"><div class="mark"></div><div>
-          <strong>Cisco CCNP Enterprise — ENARSI</strong>
-          <span>300-410</span>
-        </div></div>
-        <div class="cert"><div class="mark"></div><div>
-          <strong>AWS Certified Solutions Architect</strong>
-          <span>Associate</span>
-        </div></div>
-        <div class="cert"><div class="mark"></div><div>
-          <strong>Microsoft Azure Administrator</strong>
-          <span>AZ-104</span>
-        </div></div>
-        <div class="cert"><div class="mark"></div><div>
-          <strong>Fortinet NSE 4</strong>
-          <span>Network Security Professional</span>
-        </div></div>
+        <div class="cert"><div class="mark"></div><div><strong>CDCP — Certified Data Centre Professional</strong><span>EPI</span></div></div>
+        <div class="cert"><div class="mark"></div><div><strong>Cisco CCNP Enterprise — ENCOR</strong><span>350-401</span></div></div>
+        <div class="cert"><div class="mark"></div><div><strong>Cisco CCNP Enterprise — ENARSI</strong><span>300-410</span></div></div>
+        <div class="cert"><div class="mark"></div><div><strong>AWS Certified Solutions Architect</strong><span>Associate</span></div></div>
+        <div class="cert"><div class="mark"></div><div><strong>Microsoft Azure Administrator</strong><span>AZ-104</span></div></div>
+        <div class="cert"><div class="mark"></div><div><strong>Fortinet NSE 4</strong><span>Network Security Professional</span></div></div>
       </div>
     </section>
 
     <!-- ==================== EDUCATION ==================== -->
     <section id="education">
-      <div class="sec-head reveal"><span class="num">06</span><h2>Education &amp; Recognition</h2><div class="rule"></div></div>
+      <div class="sec-head reveal"><span class="num">07</span><h2>Education &amp; Recognition</h2><div class="rule"></div></div>
 
       <div class="edu reveal">
         <div class="label">2024</div>
-        <div>
-          <strong>B.Tech, Electronics &amp; Communications Engineering</strong>
-          <span>Cochin University of Science and Technology (CUSAT), Kerala</span>
-        </div>
+        <div><strong>B.Tech, Electronics &amp; Communications Engineering</strong>
+        <span>Cochin University of Science and Technology (CUSAT), Kerala</span></div>
       </div>
-
       <div class="edu reveal">
         <div class="label">2021</div>
-        <div>
-          <strong>Diploma, Electronics &amp; Communications</strong>
-          <span>Directorate of Technical Education, Kerala</span>
-        </div>
+        <div><strong>Diploma, Electronics &amp; Communications</strong>
+        <span>Directorate of Technical Education, Kerala</span></div>
       </div>
-
       <div class="edu reveal">
         <div class="label">Recognition</div>
         <div class="awards">
+          <span>India Book of Records — Mission 100K ft</span>
           <span>IEEE Hackathon — 1st Place, 2023</span>
           <span>L&amp;T Techgium — National Finalist, 2023</span>
           <span>Microsoft Insider Program</span>
@@ -780,6 +880,18 @@ footer a:hover{color:var(--blue);border-color:var(--blue)}
           <span>TEDx CUSAT</span>
           <span>IEEE Member</span>
           <span>Curation Head, SEDS CUSAT</span>
+        </div>
+      </div>
+
+      <div class="cta reveal">
+        <div>
+          <h3>Open to senior infrastructure &amp; network roles</h3>
+          <p>Data centre, ISP/carrier or multinational enterprise. Based in Dubai, UAE.</p>
+        </div>
+        <div class="btns">
+          <a class="btn wa" href="https://wa.me/971581391657?text=Hi%20Adil%2C%20I%20contacted%20you%20from%20your%20website." target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg>WhatsApp</a>
+          <a class="btn" href="mailto:mail@adilansaris.com"><svg class="ic"><use href="#i-mail"/></svg>Email me</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/adilansari57" target="_blank" rel="noopener"><svg class="ic"><use href="#i-li"/></svg>LinkedIn</a>
         </div>
       </div>
     </section>
@@ -792,10 +904,12 @@ footer a:hover{color:var(--blue);border-color:var(--blue)}
           Available for shift-based and on-call data centre operations
         </p>
         <p>
-          <a href="mailto:mail@adilansaris.com">mail@adilansaris.com</a><br>
+          <a href="mailto:mail@adilansaris.com">mail@adilansaris.com</a> ·
           <a href="tel:+971581391657">+971 58 139 1657</a><br>
-          <a href="https://linkedin.com/in/adilansari57">linkedin.com/in/adilansari57</a> ·
-          <a href="https://github.com/a3il">github.com/a3il</a>
+          <a href="https://www.linkedin.com/in/adilansari57">linkedin</a> ·
+          <a href="https://github.com/a3il">github</a> ·
+          <a href="https://www.youtube.com/@adilansari57">youtube</a> ·
+          <a href="https://www.instagram.com/a3il.a">instagram</a>
         </p>
       </div>
     </footer>
@@ -815,55 +929,114 @@ footer a:hover{color:var(--blue);border-color:var(--blue)}
   } else {
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
       });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
-    items.forEach(function(el, i){
-      el.style.transitionDelay = (Math.min(i, 4) * 45) + 'ms';
+    }, { rootMargin:'0px 0px -8% 0px', threshold:0.06 });
+    items.forEach(function(el,i){
+      el.style.transitionDelay = (Math.min(i,4)*45)+'ms';
       io.observe(el);
     });
   }
 
-  /* ---------- count-up on the stat band ---------- */
-  var nums = document.querySelectorAll('[data-count]');
+  /* ---------- count-up ---------- */
   function runCount(el){
-    var target = parseInt(el.getAttribute('data-count'), 10);
-    if (reduce) { el.textContent = target; return; }
-    var start = null, dur = 1100;
+    var target = parseInt(el.getAttribute('data-count'),10) || 0;
+    if (reduce){ el.textContent = target; return; }
+    var start=null, dur=1100;
     function step(ts){
-      if (!start) start = ts;
-      var p = Math.min((ts - start) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(target * eased);
-      if (p < 1) requestAnimationFrame(step);
-      else el.textContent = target;
+      if(!start) start=ts;
+      var p = Math.min((ts-start)/dur,1);
+      var eased = 1-Math.pow(1-p,3);
+      el.textContent = Math.round(target*eased);
+      if(p<1) requestAnimationFrame(step); else el.textContent = target;
     }
     requestAnimationFrame(step);
   }
-  if (!('IntersectionObserver' in window)) {
-    nums.forEach(runCount);
-  } else {
-    var cio = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.isIntersecting) { runCount(e.target); cio.unobserve(e.target); }
-      });
-    }, { threshold: 0.5 });
-    nums.forEach(function(n){ cio.observe(n); });
+  var counted = [];
+  function watchCount(el){
+    if (counted.indexOf(el) > -1) return;
+    counted.push(el);
+    if (!('IntersectionObserver' in window)){ runCount(el); return; }
+    var o = new IntersectionObserver(function(en){
+      en.forEach(function(e){ if(e.isIntersecting){ runCount(e.target); o.unobserve(e.target); } });
+    },{threshold:0.5});
+    o.observe(el);
   }
+  document.querySelectorAll('[data-count]').forEach(watchCount);
 
   /* ---------- nav scroll-spy ---------- */
   var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
   var targets = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
   function spy(){
-    var y = window.scrollY + 140, current = -1;
-    targets.forEach(function(t, i){ if (t && t.offsetTop <= y) current = i; });
-    links.forEach(function(a, i){ a.classList.toggle('active', i === current); });
+    var y = window.scrollY + 140, cur = -1;
+    targets.forEach(function(t,i){ if(t && t.offsetTop <= y) cur = i; });
+    links.forEach(function(a,i){ a.classList.toggle('active', i===cur); });
   }
-  var ticking = false;
+  var tick = false;
   window.addEventListener('scroll', function(){
-    if (!ticking) { requestAnimationFrame(function(){ spy(); ticking = false; }); ticking = true; }
-  }, { passive: true });
+    if(!tick){ requestAnimationFrame(function(){ spy(); tick=false; }); tick=true; }
+  }, {passive:true});
   spy();
+
+  /* ---------- language bar (static fallback, live below) ---------- */
+  var LANG_COLOR = {
+    'HTML':'#E34C26','Jupyter Notebook':'#DA5B0B','C++':'#F34B7D','C':'#555555',
+    'Python':'#3572A5','JavaScript':'#F1E05A','Shell':'#89E051','CSS':'#563D7C',
+    'Logos':'#999999','HCL':'#844FBA','Dockerfile':'#384D54'
+  };
+  function drawLangs(counts){
+    var total = 0, keys = Object.keys(counts);
+    keys.forEach(function(k){ total += counts[k]; });
+    if (!total) return;
+    keys.sort(function(a,b){ return counts[b]-counts[a]; });
+    var bar = document.getElementById('langbar');
+    var key = document.getElementById('langkey');
+    bar.innerHTML = ''; key.innerHTML = '';
+    keys.forEach(function(k, idx){
+      var pct = (counts[k]/total*100);
+      var col = LANG_COLOR[k] || '#8A9299';
+      var seg = document.createElement('i');
+      seg.style.background = col;
+      bar.appendChild(seg);
+      setTimeout(function(){ seg.style.width = pct.toFixed(1)+'%'; }, 120 + idx*90);
+      var s = document.createElement('span');
+      s.innerHTML = '<s style="background:'+col+'"></s>'+k+' '+pct.toFixed(1)+'%';
+      key.appendChild(s);
+    });
+  }
+  drawLangs({'HTML':4,'C++':3,'Jupyter Notebook':2,'C':2,'Python':1,'Logos':1});
+
+  /* ---------- live GitHub stats ---------- */
+  var U = 'a3il';
+  function setStat(id, val){
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.setAttribute('data-count', val);
+    el.textContent = '0';
+    runCount(el);
+  }
+  Promise.all([
+    fetch('https://api.github.com/users/'+U).then(function(r){ return r.ok ? r.json() : null; }),
+    fetch('https://api.github.com/users/'+U+'/repos?per_page=100').then(function(r){ return r.ok ? r.json() : null; })
+  ]).then(function(res){
+    var user = res[0], repos = res[1];
+    if (!user || !repos || !repos.length) return;
+    var stars = 0, forks = 0, langs = {};
+    repos.forEach(function(r){
+      if (r.fork) return;
+      stars += r.stargazers_count || 0;
+      forks += r.forks_count || 0;
+      if (r.language) langs[r.language] = (langs[r.language]||0)+1;
+    });
+    setStat('gh-repos', user.public_repos);
+    setStat('gh-followers', user.followers);
+    setStat('gh-stars', stars);
+    setStat('gh-forks', forks);
+    drawLangs(langs);
+    var note = document.getElementById('ghnote');
+    if (note) note.textContent = 'Live from the GitHub API · last synced ' +
+      new Date().toISOString().slice(0,10);
+  }).catch(function(){ /* keep static fallback */ });
 })();
 </script>
 
